@@ -1,0 +1,138 @@
+<!-- Sign In Popup
+================================================== -->
+<div class="dashboard-content-container">
+  <!--Tabs -->
+  <div class="sign-in-form">
+
+    <ul class="popup-tabs-nav">
+      <li><a href="#login">Log In</a></li>
+      <li><a href="#register">Register</a></li>
+    </ul>
+
+    <div class="popup-tabs-container">
+
+      <!-- Login -->
+      <div class="popup-tab-content" id="login">
+
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+          <h3>{{loginStatus}}</h3>
+          <span>Don't have an account? <a href="#" class="register-tab">Sign Up!</a></span>
+        </div>
+
+        <!-- Form -->
+        <div id="login-form">
+          <!-- Account Type -->
+          <!-- <div class="account-type radio-group">
+            <div>
+              <input type="radio" name="student" (click)="changeRoleStu()" value="stud" id="student-radio"
+                class="account-type-radio">
+              <label for="student-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i>
+                Student</label>
+            </div>
+
+            <div>
+              <input type="radio" name="alumni" (click)="changeRoleAlu()" id="Alumni-radio" class="account-type-radio">
+              <label for="Alumni-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i>
+                Alumni</label>
+            </div>
+          </div> -->
+          <h4>Select account type :</h4>
+          <div class="row">
+            <div class="col-md-12 input-with-icon-left">
+              <select [(ngModel)]="logRole" class="btn-group bootstrap-select show-tick dropup" id="role" name="role">
+                <option value="stud">Student</option>
+                <option value="alumni">Alumni</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-with-icon-left">
+            <i class="icon-material-baseline-mail-outline"></i>
+            <input type="text" class="input-text with-border" name="username" [(ngModel)]="loginReq.userId"
+              id="username" placeholder="User Id">
+          </div>
+
+          <div class="input-with-icon-left">
+            <i class="icon-material-outline-lock"></i>
+            <input type="password" class="input-text with-border" name="password" [(ngModel)]="loginReq.password"
+              id="password" placeholder="Password">
+          </div>
+          <!-- <a href="#" class="forgot-password">Forgot Password?</a> -->
+        </div>
+
+        <!-- Button -->
+        <button (click)="attemptLogin()" class="button full-width button-sliding-icon ripple-effect" type="button">Log
+          In
+          <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+
+
+      </div>
+
+      <!-- Register -->
+      <div class="popup-tab-content" id="register">
+
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+          <h3>{{registerStatus}}</h3>
+        </div>
+
+        <!-- Account Type -->
+        <!-- <div class="account-type">
+          <div>
+            <input type="radio" name="student" (click)="roleStudReg()" value="stud" id="student-radio"
+              class="account-type-radio">
+            <label for="student-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i>
+              Student</label>
+          </div>
+
+          <div>
+            <input type="radio" name="alumni" (click)="roleAluReg()" id="Alumni-radio" class="account-type-radio">
+            <label for="Alumni-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i>
+              Alumni</label>
+          </div>
+        </div> -->
+        <h4>Select account type :</h4>
+        <div class="row">
+          <div class="col-md-12 input-with-icon-left">
+            <select [(ngModel)]="regRole" class="btn-group bootstrap-select show-tick dropup" id="role" name="role">
+              <option value="stud">Student</option>
+              <option value="alumni">Alumni</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- Form -->
+        <div id="register-account-form">
+          <div class="input-with-icon-left">
+            <i class="icon-material-baseline-mail-outline"></i>
+            <input type="text" class="input-text with-border" name="username-register" [(ngModel)]="regReq.userId"
+              id="username-register" placeholder="User Name">
+          </div>
+
+          <div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
+            <i class="icon-material-outline-lock"></i>
+            <input type="password" class="input-text with-border" name="password-register" [(ngModel)]="regReq.password"
+              id="password-register" placeholder="Password">
+          </div>
+
+          <div class="input-with-icon-left">
+            <i class="icon-material-outline-lock"></i>
+            <input type="password" class="input-text with-border" name="password-repeat-register"
+              [(ngModel)]="regReq.rePassword" id="password-repeat-register" placeholder="Repeat Password">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <button style="width:460px" class="margin-top-10 button   button-sliding-icon ripple-effect" type="button"
+          (click)="attemptRegister()" form="register-account-form">Register <i
+            class="icon-material-outline-arrow-right-alt"></i></button>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Sign In Popup / End -->

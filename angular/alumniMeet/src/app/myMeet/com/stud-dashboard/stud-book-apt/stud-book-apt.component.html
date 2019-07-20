@@ -1,0 +1,56 @@
+<div id="makeAppointmentRequestModal" class="cModal">
+
+  <!-- cModal content -->
+  <div class="cModal-content">
+
+    <div class="cModal-body">
+      <div class="popup-tab-content" id="tab">
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+          <h3>Make a Appointment request</h3>
+        </div>
+        <div>
+
+          <div class="input-with-icon-left">
+            <i class="icon-material-baseline-mail-outline"></i>
+            <input type="text" class="input-text with-border" name="username" [(ngModel)]="aptReq.alumniId"
+              id="username" placeholder="Alumni Id">
+          </div>
+
+
+          <h4>Select Date :</h4>
+          <div class="row">
+            <div class="col-md-12 input-with-icon-left">
+              <input type="date" id="meeting-time" [(ngModel)]="aptReq.fromD" name="meeting-time" min="{{today}}"
+                max="{{maxDate}}">
+
+              <!-- <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"
+                min="2018-06-07T00" max="2018-06-14T00"> -->
+            </div>
+          </div>
+          <h4>Select Appointment Slot :</h4>
+          <div class="row">
+            <div class="col-md-12 input-with-icon-left">
+              <select [(ngModel)]="slot" id="meeting-time" name="slot">
+                <option>Select Slot</option>
+                <option value="13-14">1pm - 2pm</option>
+                <option value="16-17">4pm - 5pm</option>
+                <option value="18-19">6pm - 7pm</option>
+              </select>
+            </div>
+          </div>
+
+
+        </div>
+        <p>
+          You can only book (max) 2 appointments a week.
+        </p>
+        <!-- Button -->
+        <button (click)="makeAptRequest()" class="button margin-top-35 full-width button-sliding-icon ripple-effect"
+          type="submit" style="width: 200px;">Book Appointment <i
+            class="icon-material-outline-arrow-right-alt"></i></button>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "alumni-meet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/prasadpawar/alumni-meet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/prasadpawar/alumni-meet/issues"
+  },
+  "homepage": "https://gitlab.com/prasadpawar/alumni-meet#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.5"
+  }
+}

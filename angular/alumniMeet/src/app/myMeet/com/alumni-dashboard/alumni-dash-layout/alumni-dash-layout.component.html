@@ -1,0 +1,47 @@
+<div class="dashboard-container" style="min-height: 100%;">
+  <div class="dashboard-sidebar">
+    <div class="dashboard-sidebar-inner" data-simplebar="init">
+      <div class="simplebar-track vertical" style="visibility: visible;">
+        <div class="simplebar-scrollbar" style="visibility: visible; top: 137px; height: 83px;"></div>
+      </div>
+      <div class="simplebar-track horizontal" style="visibility: visible;">
+        <div class="simplebar-scrollbar" style="visibility: visible; left: 0px; width: 25px;"></div>
+      </div>
+      <div class="simplebar-scroll-content" style="padding-right: 15px; margin-bottom: -30px;">
+        <div class="simplebar-content" style="padding-bottom: 15px; margin-right: -15px;">
+          <div class="dashboard-nav-container">
+            <a href="#" class="dashboard-responsive-nav-trigger">
+              <span class="hamburger hamburger--collapse">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </span>
+              <span class="trigger-title">Dashboard Navigation</span>
+            </a>
+
+            <div class="dashboard-nav">
+              <div class="dashboard-nav-inner">
+                <ul *ngFor="let l1 of dashboardMenu">
+                  <li (click)="setActiveId(l2.title)" [ngClass]="{'active' : l2.title == activeId }"
+                    *ngFor="let l2 of l1.menu">
+                    <a *ngIf="l2.title !== 'Logout'" [routerLink]="l2.routerLink">
+                      <i [class]="l2.class"></i> {{l2.title}}</a>
+                    <a *ngIf="l2.title === 'Logout'" href="javascript:void();" (click)="logout()">
+                      <i [class]="l2.class"></i> {{l2.title}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-content-container" data-simplebar="init">
+    <router-outlet id="dash-container"></router-outlet>
+
+
+  </div>
+
+</div>

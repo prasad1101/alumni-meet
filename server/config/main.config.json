@@ -1,0 +1,6 @@
+{
+    "serverName": "Alumni Meet Server",
+    "port": 8000,
+    "isDebugMode": true,
+    "mongoURL": "mongodb://localhost/alumniMeet"
+}

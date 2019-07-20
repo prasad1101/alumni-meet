@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="margin-top-25 row">
+    <div class="col-xl-8 col-lg-8 content-right-offset">
+      <!-- Hedline -->
+      <h3 class="margin-top-50">Appointment Details</h3>
+      <div class="row">
+        <div style="    margin-left: 2%;       min-height: 100px;      margin-right: 0%;">
+          <ul class="intro-stats margin-top-45 ">
+            <li>
+              <strong class="counter">{{apt.approved}}</strong>
+              <span>Approved Appointments</span>
+            </li>
+            <li>
+              <strong class="counter">{{apt.rejected}}</strong>
+              <span>Pending Appointments</span>
+            </li>
+            <li>
+              <strong class="counter">{{apt.total}}</strong>
+              <span>Total Appointments</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row  margin-top-30">
+    <div class="col-xl-12 col-md-12">
+      <div class="section-headline margin-bottom-30">
+        <h4>Appointments Details</h4>
+      </div>
+      <table class="basic-table">
+        <tbody>
+          <tr>
+            <th> Appointment Id</th>
+            <th>With</th>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Approved</th>
+            <th>Edit</th>
+          </tr>
+
+          <tr *ngFor="let a of appointments;">
+            <td>{{a?.appointmentId}}</td>
+            <td>{{a?.studentId }}</td>
+            <td>{{a?.from | date : shortDate}}</td>
+            <td>{{a?.from | date : 'shortTime'}}</td>
+            <td>{{a?.to | date : 'shortTime'}}</td>
+            <td>
+              <div *ngIf="a?.isApproved" class="verified-badge-with-title">Approved</div>
+              <div *ngIf="!a?.isApproved" class="pending-badge-with-title red">Pending</div>
+            </td>
+            <td>
+              <div>
+                <button type="button" (click)="approveApt(a)" class="button"><i
+                    class="icon-material-outline-check-circle"></i></button>
+                <button type="button" (click)="rejectApt(a)" class="button"><i
+                    class="icon-material-outline-highlight-off"></i></button>
+
+              </div>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+</div>
